@@ -13,6 +13,7 @@ export const Nav = styled.div`
 
     li {
         padding: 15px;
+        text-decoration: none;
     }
 
     li:hover {

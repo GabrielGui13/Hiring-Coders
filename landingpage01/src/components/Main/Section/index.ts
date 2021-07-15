@@ -26,5 +26,4 @@ export const Section = styled.div`
             font-size: 4.75rem;
         }
     }
-    
 `

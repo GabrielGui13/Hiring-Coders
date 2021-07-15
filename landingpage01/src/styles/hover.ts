@@ -32,7 +32,7 @@ export const growShadow = css`
         -webkit-transition-property: box-shadow, transform;
         transition-property: box-shadow, transform;
     }
-    &:hover, &:focus, &:active {
+    &:hover {
         box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.5);
         -webkit-transform: scale(1.05);
         transform: scale(1.05);
