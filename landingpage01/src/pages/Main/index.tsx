@@ -1,5 +1,6 @@
 import React, { FormEvent, useState, useEffect } from 'react'
-import { toast, ToastContainer } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
+import { invalidInput, errorMail, successMail } from '../../components/Main/Toasts';
 import 'react-toastify/dist/ReactToastify.css'
 import axios from 'axios';
 
@@ -8,7 +9,8 @@ import { Nav } from '../../components/Main/Nav'
 import { Section } from '../../components/Main/Section'
 import { Form } from '../../components/Main/Form'
 
-import { BiCheckCircle } from 'react-icons/bi'
+import { History } from '../History';
+
 import { IoIosArrowDropdownCircle } from 'react-icons/io'
 
 import blackHole from '../../assets/black-hole.png'
@@ -16,48 +18,13 @@ import blackHole from '../../assets/black-hole.png'
 export function Main() {
     const [userName, setUserName] = useState('')
     const [email, setEmail] = useState('')
-
-    const successMail = () => {
-        toast.success('Email enviado com sucesso', {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: true,
-            progress: undefined
-        })
-    }
-
-    const invalidInput = (aviso: string) => {
-        toast.warn(aviso, {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: true,
-            progress: undefined
-        })
-    }
-
-    const errorMail = (erro: string) => {
-        toast.error(erro, {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: true,
-            progress: undefined
-        })
-    }
+    const [showNavbar, setShowNavbar] = useState(false)
 
     const handleSendMail = async (e: FormEvent) => {
         e.preventDefault();
         
         if (userName.trim() === '' && email.trim() === '') {
-            invalidInput('Preencha os espaços em branco!')
+            invalidInput(`Preencha os espaços em branco!`)
             return
         }
 
@@ -74,10 +41,9 @@ export function Main() {
         .then( async response => {
             let showInfo = await response.data
 
-            console.log(showInfo)
-
             if (showInfo.errorMessage) {
-                errorMail('Sentimos muito! Algo de errado aconteceu.')
+                errorMail('Ocorreu um erro! Tente novamente')
+                console.log(showInfo.errorMessage)
             }
             else {
                 setUserName('')
@@ -85,30 +51,29 @@ export function Main() {
                 successMail()
             }
         })
-        .catch(err => errorMail('Sentimos muito! Algo de errado aconteceu.'))
+        .catch(err => {
+            errorMail('Ocorreu um erro! Tente novamente')
+            console.log(err.message)
+        })
     }
 
-    let scroll = document.body.scrollTop
+    const changeHeader = () => {
+        if (window.scrollY >= 80) setShowNavbar(true)
+        else setShowNavbar(false)
+    }
 
-    useEffect(() => {
-        if (scroll > 80 || scroll > 80) {
-            console.log('shrink')
-        }
-        else {
-            console.log('normal')
-        }
-    }, [scroll])
+    window.addEventListener('scroll', changeHeader)
 
     return (
         <>
-            <Header>
+            <Header className={`header ${showNavbar ? 'activeH' : ''}`}>
                 <div className="logo">
                     <img src={blackHole} alt="Logo hydra"/>
                     <div className="line"> 
                         <h3>hydra</h3>
                     </div>
                 </div>
-                <Nav>
+                <Nav className={`nav ${showNavbar ? 'activeN' : ''}`}>
                     <ul>
                         <li> <a href="#oi">HISTÓRIA</a> </li>
                         <li> <a href="#xau">PLANOS</a> </li>
@@ -143,8 +108,7 @@ export function Main() {
                     <IoIosArrowDropdownCircle className="arrowIcon"/>
                 </div>
             </Section>
-            <p id="oi" style={{ height: '1000px' }}></p>
-            <p id="xau" style={{ height: '1000px' }}></p>
+            <History/>
         </>
     )
 }

@@ -25,19 +25,8 @@ export const Form = styled.form`
         border: 2px solid #fff5;
         transition: 0.5s;
 
-        &:hover:enabled, &:active:enabled {
+        &:hover, &:active {
             border: 2px solid white;
-        }
-    }
-
-    .error {
-        display: none;
-        position: relative;
-        top: 30px;
-
-        &::after {
-            content: 'Email invalido';
-            color: red;
         }
     }
 

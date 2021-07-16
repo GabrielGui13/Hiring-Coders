@@ -3,24 +3,22 @@ import milky from '../../../assets/milkyway-blur.png'
 
 const flutuante = keyframes`
     0% {
-        padding-bottom: 30px;
+        padding-bottom: 100px;
     }
     100% {
-        padding-bottom: 40px;
+        padding-bottom: 110px;
     }
 `
 
 export const Section = styled.div`
     width: 100%;
-    height: 700px;
+    height: 100vh;
     display: flex;
     width: 100%;
-    height: 700px;
     background-image: url(${milky});
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    margin-top: 100px;
     display: flex;
     flex-direction: column;
     
@@ -30,7 +28,7 @@ export const Section = styled.div`
         display: flex;
         justify-content: space-between;
         color: white;
-        padding: 100px 150px 0 150px;
+        padding: 200px 150px 0 150px;
         font-family: 'Roboto', sans-serif;
 
         h1 {
@@ -68,6 +66,32 @@ export const Section = styled.div`
         .arrowIcon {
             margin-top: 5px;
             color: white;
+        }
+    }
+
+    /* Toast configuration */
+    .Toastify__toast {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .Toastify__toast-body {
+        padding: 0;
+        padding-left: 5px;
+
+        svg {
+            align-self: center;
+            display: inline-block;
+            padding: 0;
+            transform: scale(1.2) translateY(2px);
+            margin-right: 8px;
+        }
+
+        span {
+            transform: translateY(-1px);
+            margin: 0;
+            display: inline-block;
+            align-self: start;
+            font-size: 13.3px;
         }
     }
 
