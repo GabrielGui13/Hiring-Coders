@@ -1,26 +1,6 @@
 import styled, { keyframes } from 'styled-components'
 import { growShadow } from '../../../styles/hover'
 
-const checkButton = keyframes`
-    0% {
-        background: linear-gradient(to bottom right, #ff0040, #d24dff, #6666ff);
-    }
-    100% {
-        background: limegreen;
-    }
-`
-
-const checkIcon = keyframes`
-    0% {
-        transform: translateY(-10px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(-5px);
-        opacity: 1;
-    }
-`
-
 export const Form = styled.form`
     width: 500px;
     height: 450px;
@@ -95,25 +75,6 @@ export const Form = styled.form`
         cursor: pointer;
 
         ${growShadow}
-    }
-
-    .sent {
-        width: 90.7px;
-        height: 40px;
-        cursor: initial;
-        background: linear-gradient(to bottom right, #ff0040, #d24dff, #6666ff);
-        animation: ${checkButton} 2.5s ease 0s 1 normal forwards;
-
-        .sent::after {
-            content: "ENVIAR";
-            animation: ${checkIcon} 2.5s ease 2.5s 1 reverse forwards;
-        }
-        
-        #checkIcon {
-            opacity: 0;
-            transform: translateY(-5px);
-            animation: ${checkIcon} 2.5s ease 2.5s 1 normal forwards;
-        }
     }
 `
 

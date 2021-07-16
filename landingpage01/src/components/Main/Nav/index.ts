@@ -13,13 +13,17 @@ export const Nav = styled.div`
 
     li {
         padding: 15px;
-        text-decoration: none;
-    }
 
-    li:hover {
-        display: inline-block;
-        transition: 0.5s ease;
-        cursor: pointer;
-        ${float}
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        &{
+            display: inline-block;
+            transition: 0.5s ease;
+            cursor: pointer;
+            ${float}
+        }
     }
 `

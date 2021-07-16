@@ -1,12 +1,17 @@
 import styled from 'styled-components'
 
 export const Header = styled.header`
+    position: fixed;
+    width: 100%;
     border: 1px solid black;
     height: 100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 150px;
+    background-color: white;
+    margin-top: -100px;
+    z-index: 100;
 
     .logo {
         height: 60px;
