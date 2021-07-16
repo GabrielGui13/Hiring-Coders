@@ -57,7 +57,8 @@ export const Section = styled.div`
 
         animation: ${flutuante} 0.5s ease-out infinite alternate;
 
-        p {
+        p, a {
+            text-decoration: none;
             text-align: center;
             color: white;
             font-family: 'Roboto', sans-serif;

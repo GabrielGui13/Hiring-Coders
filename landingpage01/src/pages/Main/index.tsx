@@ -57,17 +57,20 @@ export function Main() {
         })
     }
 
+    const toTheTop = () => {
+        window.scrollTo(0, 0);
+    }
+
     const changeHeader = () => {
         if (window.scrollY >= 80) setShowNavbar(true)
         else setShowNavbar(false)
     }
-
     window.addEventListener('scroll', changeHeader)
 
     return (
         <>
             <Header className={`header ${showNavbar ? 'activeH' : ''}`}>
-                <div className="logo">
+                <div className="logo" onClick={toTheTop}>
                     <img src={blackHole} alt="Logo hydra"/>
                     <div className="line"> 
                         <h3>hydra</h3>
@@ -75,7 +78,7 @@ export function Main() {
                 </div>
                 <Nav className={`nav ${showNavbar ? 'activeN' : ''}`}>
                     <ul>
-                        <li> <a href="#oi">HISTÓRIA</a> </li>
+                        <li> <a href="#history">HISTÓRIA</a> </li>
                         <li> <a href="#xau">PLANOS</a> </li>
                         <li> <a href="">SOBRE</a> </li>
                     </ul>
@@ -85,12 +88,12 @@ export function Main() {
                 <div className="content">
                     <div className="text">
                         <h1>Seja o próximo a desbravar o espaço.</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                        <p>Garanta sua vaga e contribua na área mais promissora do mundo, o universo.</p>
                     </div>
                     <Form method="post" onSubmit={handleSendMail}>
                         <ToastContainer/>
                         <h3>INSIRA SEUS DADOS</h3>
-                        <p>Para receber mais informações sobre como você pode desfrutar da Hydra.</p>
+                        <p>Para receber mais informações sobre como você pode usar a Hydra a seu favor.</p>
                         <fieldset>
                             <legend>Nome e sobrenome</legend>
                             <input type="text" id="nome" className="name" value={userName} onChange={e => setUserName(e.target.value)} required />
@@ -103,10 +106,10 @@ export function Main() {
                         <button type="submit" className="unsent">ENVIAR</button>
                     </Form>
                 </div>
-                <div className="saibaMais">
+                <div className="saibaMais"> <a href="#history">
                     <p>Saiba mais</p>
-                    <IoIosArrowDropdownCircle className="arrowIcon"/>
-                </div>
+                    <IoIosArrowDropdownCircle className="arrowIcon" id="history"/>
+                </a> </div>
             </Section>
             <History/>
         </>

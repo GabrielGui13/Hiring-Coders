@@ -16,9 +16,11 @@ export const Header = styled.header`
     
     &.activeH {
         background: white;
+        border-bottom: 1px solid black;
     }
 
     .logo {
+        text-decoration: none;
         height: 60px;
         display: flex;
         align-items: center;
