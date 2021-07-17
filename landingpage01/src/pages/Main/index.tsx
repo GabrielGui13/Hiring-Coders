@@ -9,9 +9,6 @@ import { Nav } from '../../components/Main/Nav'
 import { Section } from '../../components/Main/Section'
 import { Form } from '../../components/Main/Form'
 
-import { History } from '../History';
-import { Planos } from '../Planos';
-
 import { IoIosArrowDropdownCircle } from 'react-icons/io'
 
 import blackHole from '../../assets/black-hole.png'

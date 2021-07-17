@@ -12,7 +12,7 @@ import { IoPlanetSharp } from "react-icons/io5"
 export function Planos() {
     return (
         <>
-            <h1 style={{fontFamily: "'Roboto', sans-serif", textAlign: 'center'}} id="services">Serviços</h1>
+            <h1 style={{fontFamily: "'Roboto', sans-serif", textAlign: 'center', marginBottom: '30px'}} id="services">Serviços</h1>
             <Cards>
                 <div className="card" aria-haspopup="true">
                     <div className="imgBox">

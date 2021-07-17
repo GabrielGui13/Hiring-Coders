@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Author = styled.div`
     font-family: 'Roboto', sans-serif;
     width: 100%;
-    padding: 80px 150px 70px 150px;
+    padding: 80px 150px 90px 150px;
 
     > img {
         position: absolute;
