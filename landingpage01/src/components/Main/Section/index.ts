@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components'
-import milky from '../../../assets/milkyway-blur.png'
+import milky from '../../../assets/milkyway2.png'
 
 const flutuante = keyframes`
     0% {

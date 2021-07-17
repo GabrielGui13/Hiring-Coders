@@ -10,6 +10,7 @@ import { Section } from '../../components/Main/Section'
 import { Form } from '../../components/Main/Form'
 
 import { History } from '../History';
+import { Planos } from '../Planos';
 
 import { IoIosArrowDropdownCircle } from 'react-icons/io'
 
@@ -23,7 +24,7 @@ export function Main() {
     const handleSendMail = async (e: FormEvent) => {
         e.preventDefault();
         
-        if (userName.trim() === '' && email.trim() === '') {
+        if (userName.trim() === '' || email.trim() === '') {
             invalidInput(`Preencha os espaços em branco!`)
             return
         }
@@ -79,8 +80,8 @@ export function Main() {
                 <Nav className={`nav ${showNavbar ? 'activeN' : ''}`}>
                     <ul>
                         <li> <a href="#history">HISTÓRIA</a> </li>
-                        <li> <a href="#xau">PLANOS</a> </li>
-                        <li> <a href="">SOBRE</a> </li>
+                        <li> <a href="#services">SERVIÇOS</a> </li>
+                        <li> <a onClick={toTheTop}>CADASTRE-SE</a> </li>
                     </ul>
                 </Nav>
             </Header>
@@ -111,7 +112,6 @@ export function Main() {
                     <IoIosArrowDropdownCircle className="arrowIcon" id="history"/>
                 </a> </div>
             </Section>
-            <History/>
         </>
     )
 }

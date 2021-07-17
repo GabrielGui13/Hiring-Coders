@@ -1,11 +1,9 @@
 import styled from 'styled-components'
-import planetwatermark from '../../../assets/planet.png'
 
 export const Author = styled.div`
     font-family: 'Roboto', sans-serif;
     width: 100%;
-    border: 1px solid black;
-    padding: 80px 150px 150px 150px;
+    padding: 80px 150px 70px 150px;
 
     > img {
         position: absolute;

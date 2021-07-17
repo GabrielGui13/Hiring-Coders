@@ -38,7 +38,7 @@ export function History() {
                         <p>
                             Hoje o foco da Hydra está no desenvolvimento de módulos de sobrevivência espaciais, em conjunto com a NASA e a SpaceX, os módulos estão sendo criados para 
                             iniciar o processo de colonização do nosso vizinho: Marte. A empresa visa agora na comunicação da ciência acessível a qualquer um, e compartilha seu
-                            conhecimento para entusiastas do espaço e vende quadrantes espacias, vagas em exploração do espaço para o público, e vagas em projetos de colonização de 
+                            conhecimento para entusiastas do espaço e vende quadrantes espaciais, vagas em exploração do espaço para o público, e vagas em projetos de colonização de 
                             planetas, além de ser totalmente aberto para a ajuda necessária quando se trata da sobrevivência da espécie.
                         </p>
                     </div>
