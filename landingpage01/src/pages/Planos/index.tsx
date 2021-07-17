@@ -48,7 +48,7 @@ export function Planos() {
                         <h3>Colonização em massa</h3>
                         <p>
                             Programa de colonização para popular novos satélites e planetas. A inscrição nesse serviço colocará você em uma fila de primeira instância para 
-                            oportunidades de hibernar e acordar em outra atmofera. 
+                            oportunidades de hibernar e acordar em outra atmosfera. 
                         </p>
                     </div>
                     <span><FaUserAstronaut/></span>
