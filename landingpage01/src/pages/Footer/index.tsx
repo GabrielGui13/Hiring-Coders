@@ -31,7 +31,6 @@ export function Footer() {
                     <p>Hydra &#169; Todos os direitos reservados </p>
                 </Final>
             </Space>
-
         </>
     )
 }
