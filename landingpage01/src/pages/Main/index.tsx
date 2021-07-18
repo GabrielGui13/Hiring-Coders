@@ -10,6 +10,7 @@ import { Section } from '../../components/Main/Section'
 import { Form } from '../../components/Main/Form'
 
 import { IoIosArrowDropdownCircle } from 'react-icons/io'
+import { RiMenu3Fill }from 'react-icons/ri'
 
 import blackHole from '../../assets/black-hole.png'
 
@@ -75,7 +76,7 @@ export function Main() {
                     </div>
                 </div>
                 <Nav className={`nav ${showNavbar ? 'activeN' : ''}`}>
-                    <ul>
+                    <ul className="nav-list">
                         <li> <a href="#history">HISTÓRIA</a> </li>
                         <li> <a href="#services">SERVIÇOS</a> </li>
                         <li> <a onClick={toTheTop}>CADASTRE-SE</a> </li>
