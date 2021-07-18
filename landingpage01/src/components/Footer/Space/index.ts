@@ -28,7 +28,6 @@ export const Space = styled.div`
 
         img:nth-of-type(1) { 
             transform: scale(1.2);
-            width: 100%;
         }
 
         img:nth-of-type(2) {
@@ -36,6 +35,7 @@ export const Space = styled.div`
             transform: scale(0.4);
             animation: ${rotate} 5s linear infinite;
             transition: 0.3s ease-in;
+            cursor: pointer;
         }
     }
 

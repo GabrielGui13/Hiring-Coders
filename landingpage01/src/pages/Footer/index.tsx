@@ -15,8 +15,8 @@ export function Footer() {
         <>
             <Space>
                 <div className="imgWrapper">
-                    <img src={solarsystem} alt="" />
-                    <img src={hydra} alt="" />
+                    <img src={solarsystem} alt=""/>
+                    <img src={hydra} alt="" onClick={toTheTop} />
                 </div>
                 <Final>
                     <div className="icons">
