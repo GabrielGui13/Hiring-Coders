@@ -99,7 +99,7 @@ export function Main() {
                         </fieldset>
                         <fieldset>
                             <legend>E-mail</legend>
-                            <input type="text" id="email" className="email" value={email} onChange={e => setEmail(e.target.value)} required />
+                            <input type="name" id="email" className="email" value={email} onChange={e => setEmail(e.target.value)} required />
                         </fieldset>
                         <p className="error"></p>
                         <button type="submit" className="unsent">ENVIAR</button>
