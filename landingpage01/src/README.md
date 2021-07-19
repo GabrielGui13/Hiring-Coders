@@ -12,3 +12,5 @@ yarn create react-app hydra --template typescript
 
 ## React Icons
 * [Official website](https://react-icons.github.io/react-icons/)
+
+trigger
