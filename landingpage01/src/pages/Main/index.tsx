@@ -33,7 +33,7 @@ export function Main() {
         }
         
 
-        await axios.post('http://localhost:3030/sendmail', { //http://set.dev.br:3030/sendmail
+/*         await axios.post('http://localhost:3030/sendmail', { //http://set.dev.br:3030/sendmail
             userName: userName,
             email: email
         })
@@ -53,7 +53,11 @@ export function Main() {
         .catch(err => {
             errorMail('Ocorreu um erro! Tente novamente')
             console.log(err.message)
-        })
+        }) */
+
+        setUserName('')
+        setEmail('')
+        successMail()
     }
 
     const toTheTop = () => {
