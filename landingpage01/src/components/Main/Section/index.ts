@@ -2,22 +2,9 @@ import styled, { keyframes } from 'styled-components'
 import milky from '../../../assets/milkyway2.png'
 import { Responsive } from './responsive'
 
-const flutuante = keyframes`
-    0% {
-        padding-bottom: 100px;
-
-        @media (max-width: 481px) { padding-bottom: 30px; }
-    }
-    100% {
-        padding-bottom: 110px;
-
-        @media (max-width: 481px) { padding-bottom: 40px; }
-    }
-`
-
 export const Section = styled.div`
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     width: 100%;
     background-image: url(${milky});
@@ -57,9 +44,7 @@ export const Section = styled.div`
         justify-content: end;
         height: 100%;
         bottom: 10px;
-        transform: translateY(0);
-
-        animation: ${flutuante} 0.5s ease-out infinite alternate;
+        transform: translateY(30px);
 
         p, a {
             text-decoration: none;

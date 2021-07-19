@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 export const Responsive = css`
     @media (max-width: 1600px) {
         .content {
-            padding-top: 220px;
+            padding-top: 200px;
 
             h1 {
                 margin-top: 35px;
@@ -23,7 +23,7 @@ export const Responsive = css`
         .content {
             padding-left: 100px;
             padding-right: 100px;
-            padding-top: 190px;
+            padding-top: 160px;
 
             h1 {
                 width: 520px;
@@ -41,7 +41,7 @@ export const Responsive = css`
         .content {
             padding-left: 80px;
             padding-right: 80px;
-            padding-top: 230px;
+            padding-top: 190px;
 
             h1 {
                 width: 430px;
@@ -70,6 +70,10 @@ export const Responsive = css`
                 margin-top: 25px;
                 font-size: 11px;
                 width: 380px;
+            }
+
+            .saibaMais {
+                transform: translateY(50px);
             }
         }
     }
