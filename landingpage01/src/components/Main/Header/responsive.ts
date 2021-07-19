@@ -29,6 +29,7 @@ export const Responsive = css`
     @media (max-width: 768px) {
         &.header {
             justify-content: center;
+            padding: 0;
             
             .logo {
                 margin-left: -110px;

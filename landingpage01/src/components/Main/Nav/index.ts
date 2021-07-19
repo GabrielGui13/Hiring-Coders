@@ -18,6 +18,7 @@ export const Nav = styled.div`
         .hamburger-icon {
             color: white;
             display: none;
+            visibility: hidden;
             transform: scale(2);
             cursor: pointer;
         }
