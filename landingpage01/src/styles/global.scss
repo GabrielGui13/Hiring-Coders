@@ -2,6 +2,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    &::-moz-selection{
+        background: #d24dff;
+    }
+    &::selection{
+        background: #d24dff;
+    }
 }
 
 html {
