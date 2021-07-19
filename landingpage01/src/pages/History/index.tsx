@@ -14,7 +14,6 @@ export function History() {
     return (
         <>
             <Author>
-                <img src={planet} alt="fundo" />
                 <h1>Sobre o criador</h1>
                 <h3>- CEO da Hydra -</h3>  
                 <div className="content">
