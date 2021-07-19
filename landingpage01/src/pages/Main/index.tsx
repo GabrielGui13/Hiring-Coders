@@ -1,4 +1,4 @@
-import React, { FormEvent, useState, useEffect } from 'react'
+import React, { FormEvent, useState } from 'react'
 import { ToastContainer } from 'react-toastify';
 import { invalidInput, errorMail, successMail } from '../../components/Main/Toasts';
 import 'react-toastify/dist/ReactToastify.css'

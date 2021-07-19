@@ -1,5 +1,5 @@
 import React from 'react'
-import { toast, ToastContainer, ToastContentProps } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { BiErrorCircle, BiCheckCircle } from 'react-icons/bi'
 import { VscError } from 'react-icons/vsc'
 
