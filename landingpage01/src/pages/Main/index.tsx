@@ -54,6 +54,10 @@ export function Main() {
             errorMail('Ocorreu um erro! Tente novamente')
             console.log(err.message)
         }) */
+        localStorage.setItem('hydraEmail', JSON.stringify({
+            userName: userName,
+            email: email
+        }))
 
         setUserName('')
         setEmail('')
