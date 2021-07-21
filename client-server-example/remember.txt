@@ -1,0 +1,19 @@
+npm i -g pnpm
+
+criar pasta "packages", e depois pastas "web" e "server"
+pnpm init -y (trocar nome para "@dev-demands/root")
+
+criar arquivo "pnpm-workspaces.yaml" (colcoar packages: - 'packages/**') todas as pastinhas
+setar nome do package.json da pasta server para "@dev-demands/server"
+pnpm start --filter @dev-demands/server  =>  forma de rodar na pasta server
+
+pnpx create-react-app packages/web
+apagar yarn.lock e o node_modules
+trocar o nome do package.json para "@dev-demands/web"
+pnpm i --filter @dev-demands/web  =>  serve para rodar o projeto react com pnpm
+apagar os arquivos padrao do react
+pnpm run start --filter @dev-demands/web
+
+problema Error: You must `await server.start()` before calling `server.applyMiddleware()` at ApolloServer
+problema no apollo-server-express^3
+baixar o apollo-server-express^2
