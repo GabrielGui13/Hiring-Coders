@@ -1,5 +1,4 @@
 import { gql } from 'apollo-server-express'
-import { valueFromASTUntyped } from 'graphql'
 import createRepository from '../../io/database/createRepository'
 import { ListSortmentEnum } from '../List/List'
 import * as uuid from 'uuid'
