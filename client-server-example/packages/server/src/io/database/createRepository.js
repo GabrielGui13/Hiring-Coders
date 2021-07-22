@@ -17,7 +17,7 @@ function createRepository(name) {
         }),
 
         write: (data) => new Promise((resolve, reject) => {
-            readFile(path, JSON.stringify(data) ,(err) => {
+            writeFile(path, JSON.stringify(data) ,(err) => {
                 if (err) {
                     reject(err)
                     return
