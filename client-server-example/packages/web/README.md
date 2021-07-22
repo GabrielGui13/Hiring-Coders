@@ -38,6 +38,38 @@ npm install apollo-link apollo-link-context apollo-link-error apollo-link-http a
 - Uma constante client deverá ser criada, que terá a instância de ApolloClient passando um objeto de parâmetro
 - O objeto receberá o link, o cache, e ativará o connectToDevTools: true para habilitar o Apollo Dev Tools no browser
 
+```js
+const loggerLink = new ApolloLink((operation, forward) => new Observable(observer => {
+    const subscription = forward(operation).subscribe({
+        next: result => { //da o resultado na api
+            console.log('Log', result)
+            observer.next(result);
+        },
+        complete: observer.complete.bind(observer), //executa para o estado de complete
+        error: observer.error.bind(observer), //executa para um error
+    });
+
+    return () => subscription.unsubscribe(); //para o Observable
+}));
+
+const link = ApolloLink.from([
+    loggerLink,
+    onError((error) => {},
+    setContext((_, { headers }) => {}),
+    createHttpLink({})
+]);
+
+
+
+const cache = new InMemoryCache();
+
+const client = new ApolloClient({
+    link,
+    cache,
+    connectToDevTools: true
+})
+```
+
 #### Utilização no Frontend
 - No index.js, o ApolloProvider deverá ser chamado, e deverá envolver o App envolvido pelo BrowserRouter
 - o ApolloProvider receberá como props o client criado que acessa o servidor do backend
@@ -52,11 +84,70 @@ npm install apollo-link apollo-link-context apollo-link-error apollo-link-http a
 - Quando a função do useMutation for chamada, ela receberá apenas um objeto com as variáveis 
 
 ```js
+<ApolloProvider client={client} >
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>
+</ApolloProvider>
 
-```
 
-#### xxx
+const GET_CLIENT_LIST = gql`
+    query GET_CLIENT_LIST ($skip: Int!, $take: Int!) {
+        clients(options: {
+            skip: $skip
+            take: $take
+        }) {
+            items {
+                id
+                name
+            }
+            totalItems
+        }
+    }
+`
+const { data, error, loading, fetchMore } = useQuery(GET_CLIENT_LIST, {
+    fetchPolicy: 'cache-and-network', //determina como buscar os dados, busca da cache e do network ao mesmo tempo
+    variables: {
+        skip: 0,
+        take: 10,
+    }
+});
+fetchMore({
+    variables: {
+        skip: data.clients.items.length,
+        take: 10
+    },
+    updateQuery: (result, { fetchMoreResult }) => {
+        if (!fetchMoreResult) return result;
 
-```js
+        return {
+            ...result,
+            clients: {
+                ...result.clients,
+                items: result.clients.items.concat(fetchMoreResult.clients.items),
+                totalItems: fetchMoreResult.clients.totalItems
+            }
+        }
+    }
+})
 
+
+const UPDATE_CLIENT = gql`
+    mutation UPDATE_CLIENT($id: ID!, $name: String!, $email: String!) {
+        updateClient(input: { id: $id, name: $name, email: $email }) {
+            id
+            name
+            email
+        }
+    }
+`
+const [ updateClient ] = useMutation(UPDATE_CLIENT);
+
+updateClient({
+    variables: {
+        id: clientId,
+        name: values.name,
+        email: values.email
+    }
+})
 ```
