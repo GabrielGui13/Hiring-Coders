@@ -1,0 +1,10 @@
+const { resolve } = require('path')
+
+//comeca a configurar o sequelize
+
+module.exports = {
+    config: resolve(__dirname, 'src', 'config', 'database.js'), //dando o caminho da database
+    'models-paths': resolve(__dirname, 'src', 'app', 'models'), //configura o caminho relativo das models
+    'migrations-path': resolve(__dirname, 'src', 'database', 'migrations'), //caminho relativo das migrations
+    'seeders-path': resolve(__dirname, 'src', 'database', 'seeds')
+}
