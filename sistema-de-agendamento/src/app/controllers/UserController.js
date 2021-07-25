@@ -39,7 +39,7 @@ class UserController {
         const schema = Yup.object().shape({ //lib de validacao de dados
             name: Yup.string(),
             email: Yup.string().email(),
-            oldPassword: Yup.string().min(6),
+            oldPassword: Yup.string().min(6), //se tiver, password e confirmPassword serao required
             password: Yup.string().min(6).when(
                 'oldPassword', (oldPassword, field) => //recebe a oldPassword e o field que se refere ao proprio campo
                     oldPassword ? field.required() : field
