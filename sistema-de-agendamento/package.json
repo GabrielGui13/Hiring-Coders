@@ -23,6 +23,7 @@
     "yup": "^0.32.9"
   },
   "devDependencies": {
+    "@types/mongoose": "^5.11.97",
     "@types/sequelize": "^4.28.10",
     "nodemon": "^2.0.12",
     "sequelize-cli": "^6.2.0",
