@@ -28,12 +28,12 @@ const schema = yup.object().shape({
 const database = [firstProduct]
 
 export function Products() {
-    localStorage.setItem('products', JSON.stringify(database))
-    const products = JSON.parse(localStorage.getItem('products'))
+    if (localStorage.getItem('products') === null) localStorage.setItem('products', JSON.stringify(database))
 
     const { register, handleSubmit, formState:{ errors } } = useForm({resolver: yupResolver(schema)});
 
     const onFormSubmit = (data) => {
+        database = JSON.parse(localStorage.getItem('products'))
         data.id = database.length + 1
         database.push(data)
         console.log(data)
