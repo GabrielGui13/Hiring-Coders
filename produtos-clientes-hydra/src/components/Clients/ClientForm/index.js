@@ -73,4 +73,21 @@ export const ClientForm = styled.form`
     .neigh-field { grid-area: neigh; }
     .street-field { grid-area: street; }
 
+    @media (max-width: 1100px) {
+        grid-template-areas: 
+            ". title ."
+            "nome nome nome"
+            "email email email"
+            "cellphone cellphone cellphone"
+            "country country country"
+            "cep cep cep"
+            "state state state"
+            "city city city"
+            "neigh neigh neigh"
+            "street street street"
+            ". button ."
+        ;
+        .name-field { grid-area: nome; width: 302px; }
+        .email-field { grid-area: email; width: 302px; }
+    }
 `

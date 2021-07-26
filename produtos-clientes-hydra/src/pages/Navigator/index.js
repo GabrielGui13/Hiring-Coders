@@ -5,6 +5,7 @@ import hydra from '../../assets/black-hole.png'
 import { Clients } from '../Clients'
 import { Products } from '../Products'
 import { useHistory, Switch, Route } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 const Blank = () => {
     return (
@@ -17,6 +18,14 @@ const Blank = () => {
 }
 
 export function Navigator() {
+    if (document.body.clientWidth < 578) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Está no celular?',
+            text: 'Coloque a tela em modo paisagem para melhor visualização',
+        })
+    }
+
     const history = useHistory();
 
     function handleProductPage() {
