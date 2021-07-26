@@ -23,6 +23,7 @@ export function Navigator() {
             icon: 'warning',
             title: 'Está no celular?',
             text: 'Coloque a tela em modo paisagem para melhor visualização',
+            confirmButtonColor: '#f23568'
         })
     }
 

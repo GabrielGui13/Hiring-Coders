@@ -2,7 +2,7 @@
 
 ## Descrição 
 
-O sistema de cadastro da Hydra é uma aplicação que gerencia em tempo real os dados cadastrados de produtos e clientes de uma empresa fictícia. Por enquanto o site não está 100% responsivo devido a falta de tempo, porém o display flex ajuda no trabalho, optei por colocar os elementos em coluna para facilitar a visualização tanto em desktop quanto em mobile
+O sistema de cadastro da Hydra é uma aplicação que gerencia em tempo real os dados cadastrados de produtos e clientes de uma empresa fictícia. O site já está 100% responsivo, optei por colocar os elementos em coluna para facilitar a visualização tanto em desktop quanto em mobile, mesmo assim a visualização em celular fica melhor na horizontal, devido ao grande fluxo de informações das tabelas.
 
 ## User Interface
 
