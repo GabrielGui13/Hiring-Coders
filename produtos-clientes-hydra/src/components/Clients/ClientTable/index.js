@@ -20,6 +20,7 @@ export const ClientTable = styled.table`
 
     td {
         overflow-x: hidden;
+        padding-left: 2px;
 
         &:nth-of-type(1) {
             width: 2%;
@@ -63,6 +64,9 @@ export const ClientTable = styled.table`
         tr {
             font-size: 11px;
         }
+        td {
+            padding-left: 1px;
+        }
     }
     @media (max-width: 576px) {
         tr {
@@ -72,6 +76,9 @@ export const ClientTable = styled.table`
     @media (max-width: 480px) {
         tr {
             font-size: 8px;
+        }
+        td {
+            padding-left: 0px;
         }
     }
     @media (max-width: 420px) {
