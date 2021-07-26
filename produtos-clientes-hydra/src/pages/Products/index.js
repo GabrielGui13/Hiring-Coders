@@ -25,7 +25,7 @@ const schema = yup.object().shape({
     qtd: yup.number().positive('Insira um número válido').required('Preencha o campo de quantidade').typeError('Insira um número válido'),
 })
 
-const database = [firstProduct]
+const database = [firstProduct] 
 
 export function Products() {
     if (localStorage.getItem('products') === null) localStorage.setItem('products', JSON.stringify(database))
@@ -33,7 +33,6 @@ export function Products() {
     const { register, handleSubmit, formState:{ errors } } = useForm({resolver: yupResolver(schema)});
 
     const onFormSubmit = (data) => {
-        database = JSON.parse(localStorage.getItem('products'))
         data.id = database.length + 1
         database.push(data)
         console.log(data)

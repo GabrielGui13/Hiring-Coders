@@ -46,7 +46,6 @@ export function Clients() {
     const { register, handleSubmit, formState:{ errors } } = useForm({resolver: yupResolver(schema)});
 
     const onFormSubmit = (data) => {
-        database = JSON.parse(localStorage.getItem('clients'))
         data.id = database.length + 1
         database.push(data)
         localStorage.setItem('clients', JSON.stringify(database))
