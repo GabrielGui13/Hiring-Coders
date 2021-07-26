@@ -89,7 +89,7 @@ export function Clients() {
                     </div>
                     <div className="cellphone-field">
                         <label htmlFor="celular">Celular: </label>
-                        <input type="text" id="celular" {...register('cellphone')} placeholder="xx xxxxx xxxx"/>
+                        <input type="number" id="celular" {...register('cellphone')} placeholder="xx xxxxx xxxx"/>
                         <p>{errors.cellphone?.message}</p>
                     </div>
                     <div className="country-field">
@@ -99,7 +99,7 @@ export function Clients() {
                     </div>
                     <div className="cep-field">
                         <label htmlFor="cep">CEP: </label>
-                        <input type="text" id="cep" {...register('cep')} placeholder="Informe o CEP para seu endereço" onBlur={clientAddress}/>
+                        <input type="number" id="cep" {...register('cep')} placeholder="Informe o CEP para seu endereço" onBlur={clientAddress}/>
                         <p>{errors.cep?.message}</p>
                     </div>
                     <div className="state-field">

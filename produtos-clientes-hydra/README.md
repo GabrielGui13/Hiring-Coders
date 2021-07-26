@@ -6,7 +6,7 @@ O sistema de cadastro da Hydra é uma aplicação que gerencia em tempo real os 
 
 ## User Interface
 
-A interface do sistema é bem simples, logo de início, o BrowserRouter do react-router-dom coloca um component vazio pedindo para o usuário selecionar qual interface de cadastro ele prefere, dois botões na parte superior administram qual página o usuário irá entrar, a de cadastro e mostra de produtos, ou a dos clientes, ao clicar na logomarca acima, a página inicial de seleção é carregada novamente.
+A interface do sistema é bem simples, logo de início, o BrowserRouter do react-router-dom coloca um component vazio pedindo para o usuário selecionar qual interface de cadastro ele prefere, dois botões na parte superior administram qual página o usuário irá entrar, a de cadastro e mostra de produtos, ou a dos clientes, ao clicar na logomarca acima, a página inicial de seleção é carregada novamente. Cada tabela, seja de produto ou cliente, contém um arquivo pré-cadastrado de referência.
 
 ## Funcionalidades
 

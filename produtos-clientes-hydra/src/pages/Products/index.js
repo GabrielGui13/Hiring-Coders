@@ -10,11 +10,11 @@ import Swal from 'sweetalert2'
 
 const firstProduct = {
     id: "1",
-    brand: "Space",
-    name: "Asteroide",
+    brand: "Hydra",
+    name: "Endurance G26",
     price: "4999.00",
-    description: "Lindo asteroide",
-    qtd: "9"
+    description: "Nave espacial de alta propulsão, modelo G26 da linha Endurance",
+    qtd: "1"
 }
 
 const schema = yup.object().shape({
@@ -62,7 +62,7 @@ export function Products() {
                     </div>
                     <div className="price-field">
                         <label htmlFor="preço">Preço: </label>
-                        <input type="text" name="preço" field {...register('price')} placeholder="Ex: 4999"/>
+                        <input type="number" name="preço" field {...register('price')} placeholder="Ex: 4999"/>
                         <p>{errors.price?.message}</p>
                     </div>
                     <div className="description-field">
