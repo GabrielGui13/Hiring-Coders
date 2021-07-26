@@ -20,9 +20,9 @@ const firstProduct = {
 const schema = yup.object().shape({
     brand: yup.string().required("Preencha o campo da marca"),
     name: yup.string().required('Preencha o campo do nome'),
-    price: yup.number().positive().required('Preencha o campo do pais').typeError('Numero invalido'),
+    price: yup.number().positive('Insira um número válido').required('Preencha o campo do pais').typeError('Insira um número válido'),
     description: yup.string().required('Preencha o campo da descricao'),
-    qtd: yup.number().positive('Preencha um numero valido').required('Preencha o campo de quantidade').typeError('Numero invalido'),
+    qtd: yup.number().positive('Insira um número válido').required('Preencha o campo de quantidade').typeError('Insira um número válido'),
 })
 
 const database = [firstProduct]
@@ -40,7 +40,8 @@ export function Products() {
         localStorage.setItem('products', JSON.stringify(database))
         Swal.fire({
             icon: 'success',
-            title: 'Produto cadastrado com sucesso!',
+            title: 'Sucesso!',
+            text: 'Produto cadastrado com sucesso!',
             confirmButtonColor: '#f23568'
         })
     }

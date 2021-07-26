@@ -25,17 +25,17 @@ const firstClient = {
 const schema = yup.object().shape({
     name: yup.string().required('Preencha o campo do nome'),
     email: yup.string().email("Digite um email válido").required("Preencha o campo de email"),
-    cellphone: yup.number().min(10).required('Preencha um numero de telefone valido').typeError('O numero de telefone deve ter 11 dígitos numéricos'),
+    cellphone: yup.number().min(10, 'O telefone deve ter 11 digitos: ddd + numero').required('Preencha um numero de telefone valido').typeError('O numero de telefone deve ter 11 dígitos numéricos'),
     country: yup.string().required('Preencha o campo do pais'),
     cep: yup.number()
         .typeError("O CEP deve ter 8 dígitos numéricos")
-        .positive()
+        .positive('Insira um número válido')
         .min(7, "O CEP deve ter 8 dígitos numéricos")
         .required("Informe o CEP de sua residencia"),
-    state: yup.string().required("Preencha o estado").min(1).max(2),
-    city: yup.string().required("Preencha a cidade"),
-    neighbourhood: yup.string().required("Preencha o bairro"),
-    street: yup.string().required("Preencha sua rua")
+    state: yup.string().required("Preencha o campo do estado").min(1).max(2),
+    city: yup.string().required("Preencha o campo da cidade"),
+    neighbourhood: yup.string().required("Preencha o campo da bairro"),
+    street: yup.string().required("Preencha o campo da rua")
 })
 
 const database = [firstClient]
@@ -52,7 +52,8 @@ export function Clients() {
         localStorage.setItem('clients', JSON.stringify(database))
         Swal.fire({
             icon: 'success',
-            title: 'Cliente cadastrado com sucesso!',
+            title: 'Sucesso!',
+            text: 'Cliente cadastrado com sucesso!',
             confirmButtonColor: '#f23568'
         })
     }
@@ -99,7 +100,7 @@ export function Clients() {
                     </div>
                     <div className="cep-field">
                         <label htmlFor="cep">CEP: </label>
-                        <input type="text" id="cep" {...register('cep')} placeholder="CEP ira gerar endereco" onBlur={clientAddress}/>
+                        <input type="text" id="cep" {...register('cep')} placeholder="Informe o CEP para seu endereço" onBlur={clientAddress}/>
                         <p>{errors.cep?.message}</p>
                     </div>
                     <div className="state-field">
