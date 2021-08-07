@@ -1,0 +1,10 @@
+.stackItem { /* forma de estilizar os elementos em bloco */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.imageElement--cover {
+    object-fit: cover;
+}

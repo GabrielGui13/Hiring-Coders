@@ -1,0 +1,285 @@
+{
+  "store.home": { 
+    "blocks": [
+      "rich-text",
+      "info-card#button-right", //declarando os blocos do site, "info-card"
+      "info-card#button-left", //declarando uuma instancia de um bloco especifico
+      "rich-text#blank-space",
+      "flex-layout.row",
+      "slider-layout#home",
+      "responsive-layout.desktop#desktop",
+      "responsive-layout.mobile#mobile",
+      "tab-layout#home",
+      "modal-trigger#first",
+      "list-context.product-list",
+      "stack-layout#cta"
+    ]
+  },
+  "stack-layout#cta": { //declaracao do stack layout
+    "children": [ //foi estilizado em css
+      "image#cta",
+      "link#cta"
+    ]
+  },
+  "image#cta": { //declara a imagem no fundo do stack layout
+    "props": {
+      "blockClass": "cover",
+      "width": "100%",
+      "height": 400,
+      "src": "https://appliancetheme.vtexassets.com/assets/app/src/appliancecat___1b7592b49667c6a89203a0997e06bc87.jpg"
+    }
+  },
+  "link#cta": { //declaracao de um link
+    "props": {
+      "displayMode": "button", //link em forma DE BOTAO
+      "buttonProps": { //config do botao
+        "variant": "primary",
+        "size": "large"
+      },
+      "href": "/washer", //rota do link
+      "label": "Check these awesome discounts" //texto do link
+    }
+  },
+  "list-context.product-list": { //declara uma lista com todos os produtos
+    "blocks": [
+      "product-summary.shelf#home" //produto
+    ],
+    "children": [
+      "slider-layout" //coloca os produtos organizados em um layout
+    ]
+  },
+  "product-summary.shelf#home": { //declara o que aparece de cada produto
+    "children": [
+      "modal-trigger#quickview", //declara como trigger do modal
+      "product-summary-name",
+      "product-selling-price"
+    ]
+  },
+  "modal-trigger#quickview": { //define o trigger do modal
+    "children": [
+      "product-summary-image", //o modal eh aberto quando clica na imagem, a iamgem aparece por estar dentro
+      "modal-layout#quickview"
+    ]
+  },
+  "modal-layout#quickview": { //definicao do layout do produto no modal
+    "children": [
+      "product-summary-name",
+      "product-images",
+      "product-summary-sku-selector",
+      "product-summary-quantity",
+      "add-to-cart-button"
+    ]
+  },
+  "rich-text": { //um dos blocos
+    "props": { 
+      "text": "**Hello World!**", //lido em markdown
+      "textPosition": "RIGHT" //posicao do texto
+    }
+  },
+  "info-card": { 
+    "props": {
+      "isFullModeStyle": false, //false separa a div do texto para a imagem, true coloca a imagem por completo e o texto por cima
+      "textPosition": "right", //posicao do texto em relacao a imagem
+      "imageUrl": "https://appliancetheme.vteximg.com.br/arquivos/cozinha-rosa-min.png", //src da imagem dentro do info-card
+      "headline": "Loja do Gabriel", //titulo principal
+      "subhead": "Give your kitchen a boho style adding vintage apparels.<br>Available until January 2020.", //texto secundario
+      "callToActionMode": "button", //tipo de acao abaixo do text
+      "callToActionText": "Explore", //texto da acao
+      "callToActionUrl": "/sale/d", //rota da acao
+      "textAlignment": "center" //alinhamento do texto
+    }
+  },
+  "info-card#button-right": {
+    "props": {
+      "isFullModeStyle": false,
+      "textPosition": "right",
+      "imageUrl": "https://appliancetheme.vteximg.com.br/arquivos/cozinha-rosa-min.png",
+      "headline": "Vintage Pink",
+      "subhead": "Give your kitchen a boho style adding vintage apparels.<br>Available until January 2020.",
+      "callToActionMode": "button",
+      "callToActionText": "Explore",
+      "callToActionUrl": "/sale/d",
+      "textAlignment": "center"
+    }
+  },
+  "info-card#button-left": {
+    "props": {
+    "isFullModeStyle": false,
+    "textPosition": "left",
+    "imageUrl": "https://appliancetheme.vteximg.com.br/arquivos/cozinha-cinza-min.png",
+    "headline": "Shining chrome",
+    "subhead": "Give your kitchen a cool style adding warm metallic finishes.<br>Available until January 2020.",
+    "callToActionMode": "link",
+    "callToActionText": "Go to collection",
+    "textAlignment": "center"
+    }
+  },
+  "rich-text#blank-space": {
+    "props": { 
+      "text": "<br><br><br><br><br>",
+      "textPosition": "CENTER",
+      "marginTop": 10
+    }
+  },
+  "flex-layout.row":{ //cria uma linha flex e insere, um infocard e depois uma coluna flex
+    "children": [
+      "info-card#rethink", //empilha horizontalmente
+      "flex-layout.col"
+    ]
+  },
+  "flex-layout.col": { //dentro da coluna flex, tera duas imagens, uma acima da outra
+    "children": [
+      "image#electronics", //empilha verticalmente
+      "image#major-appliance"
+    ]
+  },
+  "image#electronics": {
+    "props": {
+      "src": "https://appliancetheme.vteximg.com.br/assets/vtex.file-manager-graphql/images/electronics_banner___25d69b49f8224b369375e68513b4d593.png",
+      "maxWidth": "100%"
+    }
+  },
+  "image#major-appliance": {
+    "props": {
+      "src": "https://appliancetheme.vteximg.com.br/assets/vtex.file-manager-graphql/images/major_appliance_banner___bb10093866a127345ddfbcca3efa5022.png",
+      "maxWidth": "100%"
+    }
+  },
+  "info-card#rethink": {
+    "props": {
+      "imageUrl": "https://appliancetheme.vteximg.com.br/arquivos/utensilios-cozinha-min.png",
+      "isFullModeStyle": true,
+      "headline": "Time to rethink your kitchen",
+      "callToActionText": "Discover",
+      "textPosition": "center"
+    }
+  },
+  "responsive-layout.desktop#desktop": { //quando estiver no desktop
+    "children": [
+      "rich-text#desktop",
+      "image#desktop"
+    ]
+  },
+  "responsive-layout.mobile#mobile": { //quando estiver no mobile
+    "children": [
+      "rich-text#mobile",
+      "image#mobile"
+    ]
+  },
+  "rich-text#desktop": { //troca o texto no desktop
+    "props": {
+      "text": "# Your Coffee, Your Way \n ### New Coffee Makers Collection (I'm on desktop)",
+      "textPosition": "CENTER",
+      "textAlignment": "CENTER"
+    }
+  },
+  "rich-text#mobile": { //troca o texto no mobile
+    "props": {
+      "text": "### Your Coffee, Your Way \n #### New Coffee Makers Collection (I'm on mobile)",
+      "textPosition": "CENTER",
+      "textAlignment": "CENTER"
+    }
+  },
+  "image#desktop": { //declaracao da imagem do desktop
+    "props": {
+      "src": "https://appliancetheme.vteximg.com.br/arquivos/Responsive-Image-Desktop.jpg?q=1",
+      "link": {
+        "url": "/small-appliances/coffee-makers"
+      } ,
+      "alt": "Coffee Makers Collection",
+      "maxWidth": "100%"
+    }
+  },
+  "image#mobile": { //declaracao da imagem do mobile
+    "props": {
+      "src": "https://appliancetheme.vteximg.com.br/arquivos/Responsive-Image-Mobile.jpg?q=1",
+      "link": {
+        "url": "/small-appliances/coffee-makers"
+      } ,
+      "alt": "Coffee Makers Collection",
+      "maxWidth": "100%"
+    }
+  },
+  "tab-layout#home": { //cria um tab layout, que vai ter as abas e o conteudo das abas
+    "children": [
+      "tab-list#home",
+      "tab-content#home"
+    ]
+  },
+  "tab-list#home": { //a tab list, lista todas as abas que terao
+    "children": [
+      "tab-list.item#home1",
+      "tab-list.item#home2"
+      ]
+  },
+  "tab-list.item#home1": { // declara o texto e a id de cada aba
+    "props": {
+      "tabId": "majorAppliances",
+      "label": "Major Appliances",
+      "defaultActiveTab": true //define que essa eh a aba ativa por padrao
+    }
+  },
+  "tab-list.item#home2": {
+    "props": {
+      "tabId": "electronics",
+      "label": "Electronics"
+    }
+  },
+  "tab-content#home": { //conteudo ao selecionar cada aba
+    "children": [
+      "tab-content.item#home1",
+      "tab-content.item#home2"
+      ]
+  },
+  "tab-content.item#home1": { //ao clicar na primeira aba:
+    "children": [
+      "rich-text#home1" //esse bloco sera mostrado
+    ],
+    "props": {
+      "tabId": "majorAppliances" //link dos ids para diferenciar
+    }
+  },
+  "tab-content.item#home2": { //ao clicar na primeira aba:
+    "children": [
+      "rich-text#home2" //esse bloco sera mostrado
+    ],
+    "props": {
+      "tabId": "electronics"
+    }
+  },
+  "rich-text#home1": { //rich text da aba 1
+    "props": {
+      "text": "Texto para Major Appliances",
+      "textPosition": "CENTER",
+      "font": "t-heading-3"
+    }
+  },
+  "rich-text#home2": { //rich text da aba 2
+    "props": {
+      "text": "Texto para Electronics",
+      "textPosition": "CENTER",
+      "font": "t-heading-3"
+    }
+  },
+  "modal-trigger#first": { //define o elemento para dar trigger no modal
+    "children": [
+      "rich-text#trigger",
+      "modal-layout#first" //declara o modal
+    ]
+  },
+  "rich-text#trigger": { //texto do content do trigger
+    "props": {
+      "text": "CLICK ME"
+    }
+  },
+  "modal-layout#first": { //declaracao do modal
+    "children": [
+      "rich-text#hello" //conteudo do modal
+    ]
+  },
+  "rich-text#hello": { //conteudo do modal configurado
+    "props": {
+      "text": "Hello"
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "store.product": {
+    "children": [
+      "condition-layout.product", //acima de todos para ficar acima
+      "breadcrumb", //texto que mostra de onde o usuario veio
+      "flex-layout.row#main" //separa a tela em uma grid
+    ]
+  },
+  "condition-layout.product": { //.product, condicao que depende do produto
+    "children": [
+      "condition.product#ps5"
+    ]
+  },
+  "condition.product#ps5": {
+    "props": {
+      "conditions": [ // if (productId == 5)
+        {
+          "subject": "productId", //dado da comparacao
+          "verb": "is", //tipo de comparacao
+          "object": "5" //valor da comparacao
+        }
+      ]
+    },
+    "children": ["image#ps5"] //se a condicao for true, o children eh mostrado
+  },
+  "image#ps5": {
+     "props": {
+       "src": "https://appliancetheme.vtexassets.com/assets/app/src/retroimage___92a8271aac7c51d2059193bdbe019016.jpg",
+       "width": "100%",
+       "height": "200px",
+       "blockClass": "cover"
+     }
+   },
+  "flex-layout.row#main": { //declara uma row main
+    "props": {
+      "marginTop": 6 //a row tem margintop de 6px
+    },
+    "children": [ //dentro dessa row ha duas col
+      "flex-layout.col#left",
+      "flex-layout.col#right" //declara as cols e as configuram logo abaixo
+    ]
+  },
+  "flex-layout.col#left": { //a col da esquerda tem as imagens do produto
+    "children": [
+      "product-images"
+    ]
+  },
+  "flex-layout.col#right": { //a col da direita tem o nome, preco, e botao de compra do produto
+    "props": {
+      "preventVerticalStretch": true,
+      "verticalAlign": "middle"
+    },
+    "children": [
+      "product-name",
+      "product-identifier.product", //referencia / id do produto
+      "product-price", //declara o product price e o configura logo abaixo
+      "flex-layout.row#qty-sku", //flex row para um seletor de quantidade
+      "shipping-simulator", //bloco de calculo de codigo postal
+      "buy-button"
+    ]
+  },
+  "product-price": {
+    "props": {
+      "showSavings": true, //mostrar economia
+      "showListPrice": true
+    }
+  },
+  "flex-layout.row#qty-sku": { //configura o seletor de unidade
+    "children": [
+      "sku-selector",
+      "product-quantity"
+    ]
+  }
+}
