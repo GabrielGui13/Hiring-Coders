@@ -12,7 +12,8 @@
       "tab-layout#home",
       "modal-trigger#first",
       "list-context.product-list",
-      "stack-layout#cta"
+      "stack-layout#cta",
+      "countdown"
     ]
   },
   "stack-layout#cta": { //declaracao do stack layout
