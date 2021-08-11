@@ -49,7 +49,7 @@
     "vtex.store-link": "0.x",
     "vtex.modal-layout": "0.x",
     "vtex.product-price": "1.x",
-    "hiringcoders2021.countdown": "0.x"
+    "vtex.countdown": "0.x"
   },
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
 }

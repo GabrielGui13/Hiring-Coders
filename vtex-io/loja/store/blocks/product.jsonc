@@ -52,7 +52,9 @@
     },
     "children": [
       "product-name",
-      "product-identifier.product", //referencia / id do produto
+      "product-identifier.product", //referencia / id do produto,
+      "countdown.title", //bloco criado e linkado no workspace
+      "countdown",
       "product-price", //declara o product price e o configura logo abaixo
       "flex-layout.row#qty-sku", //flex row para um seletor de quantidade
       "shipping-simulator", //bloco de calculo de codigo postal
