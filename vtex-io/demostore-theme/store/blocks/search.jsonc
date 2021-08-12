@@ -1,5 +1,11 @@
 {
   "store.search": {
+    "props": {
+      "context": {
+        "skusFilter": "FIRST_AVAILABLE", //controlar para que apenas o primeiro SKU disponível seja retornado
+        "simulationBehavior": "skip" //Para tornar os preços mais cacheáveis e evitar simulá-los para cada resultado de busca obtido
+      }
+    },
     "blocks": ["search-result-layout#search"]
   },
 
@@ -201,10 +207,15 @@
 
   "flex-layout.row#depBanner": {
     "children": [
-      "info-card#depbanner"
+      "image#depbanner" //melhor image do que infocard, pois eh mais perfomatico
     ]
   },
-
+  "image#depbanner": {
+    "props": {
+      "src": "assets/electronics.png",
+      "preload": true //conteudo nao comita recursos com o restante da pagina
+    }
+  },
   "search-result-layout.mobile#dep": {
     "children": [
       "flex-layout.row#depBanner",

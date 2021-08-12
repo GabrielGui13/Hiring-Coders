@@ -60,5 +60,10 @@
 
   "store.product-review-form": {
     "blocks": ["product-review-form"]
+  },
+  "product-summary-image": { //desperdicava imagem pois sobrava banca
+    "props": {
+      "width": 281 //aqui define um tamanho certo
+    }
   }
 }
