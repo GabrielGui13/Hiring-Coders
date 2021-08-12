@@ -1,4 +1,8 @@
-// store-block/react/Countdown.tsx
+
+
+// DESCOMENTAR IMPORT DO USEPRODUCT E O PROPRIO HOOK
+
+
 import React, { useState } from 'react'
 import { TimeSplit } from './typings/global' //tipagens globais em pasta local
 import { tick, getTwoDaysFromNow } from './utils/time' //funcao de um script local
