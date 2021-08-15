@@ -1,0 +1,38 @@
+{ //de primeira o routes para esse theme nao funcionou, entao deve dar unlink e depois link de novo
+    "store.custom#about-us": { //cria o bloco customizado
+        "blocks": [
+            "flex-layout.row#about-us" //dentro dele tem um flex-layout row
+        ]
+    },
+    "flex-layout.row#about-us": { //dentro do row, tem uma imagem e uma flex col
+        "children": [
+            "image#about-us",
+            "flex-layout.col#text-about-us"
+        ]
+    },
+    "flex-layout.col#text-about-us": { //dentro da flex col ha dois textos
+        "children": [
+            "rich-text#about-title",
+            "rich-text#about-content"
+        ],
+        "props": {
+            "preventVerticalStretch": true
+        }
+    },
+    "rich-text#about-title": { //config do text
+        "props": {
+            "text": "### About Minimum Theme"
+        }
+    },
+    "rich-text#about-content": { //config do outro text
+        "props": {
+            "text": " This is the _VTEX Minimum Theme_, \n you can use it to test blocks usage and build your first store from scratch."
+        }
+    },
+    "image#about-us": { //imagem
+        "props": {
+            "src": "https://appliancetheme.vteximg.com.br/arquivos/cozinha-about-us.png",
+            "maxHeight": "600px"
+        }
+    }
+}

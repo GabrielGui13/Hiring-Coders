@@ -1,0 +1,30 @@
+{
+    "store.custom#landing": {
+        "blocks": [
+            "image#landingbanner",
+            "search-result-layout.customQuery"
+        ]
+    },
+    "image#landingbanner": {
+        "props": {
+            "src": "https://appliancetheme.vteximg.com.br/arquivos/cozinha-about-us.png", //img aleatoria, anterior indisponivel
+            "minWidth": "100%",
+            "maxHeight": "300px"
+        }
+    },
+    "search-result-layout.customQuery": {
+        "blocks": [
+            "search-result-layout.desktop"
+        ],
+        "props": {
+            "querySchema": {
+                "orderByField": "OrderByReleaseDateDESC", //por lancamento de maneira decrescente
+                "hideUnavailableItems": true,
+                "maxItemsPerPage": 8,
+                "queryField": "Camera",
+                "mapField": "ft",
+                "skusFilter": "ALL_AVAILABLE"
+            }
+        }
+    }
+}
