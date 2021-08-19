@@ -1,20 +1,15 @@
 import { UserInputError } from '@vtex/api'
+import { json } from 'co-body'
 
-export async function status(ctx: Context, next: () => Promise<any>) {
-  const {
-    vtex: {
-      route: { params },
-    },
-  } = ctx // dentro do context ha tudo, req, res, headers, params, e inclusive os clients
-
-  const { code } = params // retira o code do params com destructuring
+export async function statusPost(ctx: Context, next: () => Promise<any>) {
+  const { code } = await json(ctx.req)
 
   if (!code) {
     // se estiver null ou undefined
     throw new UserInputError('Code is required') // Wrapper for a Bad Request (400) HTTP Error. Check others in https://github.com/vtex/node-vtex-api/blob/fd6139349de4e68825b1074f1959dd8d0c8f4d5b/src/errors/index.ts
   }
 
-  const codeNumber = parseInt(code as string, 10)
+  const codeNumber = parseInt(code, 10)
 
   const res = await ctx.clients.status.getStatus(codeNumber).catch((reason) => {
     // quando retorna todo o corpo do codigo http, o sistema reconhece como um erro
