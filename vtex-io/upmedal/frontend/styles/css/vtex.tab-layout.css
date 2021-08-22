@@ -1,0 +1,11 @@
+.listContainer {
+    background-color: #1a1a1a;
+}
+
+.listItem {
+    border: none;
+}
+
+.listItemActive {
+    border: none;
+}

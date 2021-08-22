@@ -1,9 +1,13 @@
 {
   "header": {
-    "blocks": ["header-layout.desktop", "header-layout.mobile"]
+    "blocks": [
+      "header-layout.desktop"
+    ]
   },
   "header.full": {
-    "blocks": ["header-layout.desktop", "header-layout.mobile"]
+    "blocks": [
+      "header-layout.desktop"
+    ]
   },
   "header-layout.desktop": {
     "children": [
@@ -14,9 +18,11 @@
     "props": {
       "blockClass": "sticky-header"
     },
-    "children": ["flex-layout.row#desktop"]
+    "children": [
+      "flex-layout.row#main"
+    ]
   },
-  "flex-layout.row#desktop": {
+  "flex-layout.row#main": {
     "props": {
       "horizontalAlign": "center",
       "verticalAlign": "center",
@@ -25,55 +31,40 @@
       "fullWidth": true
     },
     "children": [
-      "flex-layout.col#logo-desktop",
-      "flex-layout.col#spacer",
+      "flex-layout.col#logo-main",
+      "flex-layout.col#space1",
       "search-bar",
-      "locale-switcher",
-      "login",
+      "flex-layout.col#space2",
       "minicart.v2"
     ]
   },
-  "flex-layout.col#spacer": {
+  "flex-layout.col#space1": {
     "props": {
       "width": "grow"
     }
   },
-  "flex-layout.col#logo-desktop": {
+  "flex-layout.col#space2": {
+    "props": {
+      "width": "grow"
+    }
+  },
+  "flex-layout.col#logo-main": {
     "props": {
       "verticalAlign": "middle"
     },
-    "children": ["logo"]
+    "children": [
+      "logo"
+    ]
   },
   "logo": {
     "props": {
       "title": "Logo",
       "href": "/",
-      "url": "https://brand.vtex.com/static/media/VTEX_pink_RGB.751a9fb5.svg",
-      "width": "80"
+      "url": "https://static.wixstatic.com/media/a43c66_f6dc742ad20845698e5e5d593225e229~mv2.png/v1/fill/w_380,h_236,al_c,q_85,usm_0.66_1.00_0.01/Upmedal%20logo-ai.webp",
+      "width": "120"
     }
   },
-  "header-layout.mobile": {
-    "children": ["sticky-layout#mobile"]
-  },
-  "sticky-layout#mobile": {
-    "children": ["flex-layout.row#mobile"]
-  },
-  "flex-layout.row#mobile": {
-    "children": [
-      "drawer",
-      "logo",
-      "flex-layout.col#spacer",
-      "login",
-      "minicart.v2"
-    ],
-    "props": {
-      "blockClass": "main-header-mobile",
-      "preventHorizontalStretch": true,
-      "preserveLayoutOnMobile": true,
-      "fullWidth": true
-    }
-  },
-  "drawer": {
-    "children": []
+  "flex-layout.row#nav": {
+
   }
 }

@@ -1,0 +1,13 @@
+.searchBarContainer {
+    width: 600px;
+}
+
+.searchBarContainer :global(.vtex-input-prefix__group) {
+    border: none;
+    border-bottom: 2px solid white;
+    border-radius: 0;
+}
+
+.logoLink {
+    padding-left: 10px;
+}
