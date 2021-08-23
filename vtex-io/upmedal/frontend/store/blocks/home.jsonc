@@ -1,8 +1,7 @@
 {
   "store.home": { 
     "blocks": [
-      "flex-layout.row#container",
-      "list-context.image-list#slider"
+      "flex-layout.row#container"
     ]
   },
   "flex-layout.row#container": {
@@ -13,9 +12,10 @@
       "tab-layout#nav"
     ]
   },
-  "tab-layout#nav": {
+  "tab-layout#nav": { 
     "children": [
       "tab-list#nav",
+      "list-context.image-list#slider",
       "tab-content#nav"
     ]
   },
@@ -222,7 +222,7 @@
         "stopOnHover": false
       },
       "infinite": true,
-      "showNavigationArrows": "desktopOnly",
+      "showNavigationArrows": "always",
       "blockClass": "carousel"
     }
   }

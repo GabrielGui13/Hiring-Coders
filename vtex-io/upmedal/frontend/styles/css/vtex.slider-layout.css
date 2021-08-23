@@ -1,7 +1,27 @@
-.sliderLayoutContainer .sliderLayoutContainer--carousel {
-    background: transparent;
+.sliderLayoutContainer--carousel {
+    background: #242424;
+    width: 1200px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 40px;
 }
 
-.slide {
-    background: transparent;
+.sliderArrows--carousel {
+    margin-top: 390px;
+    transform: scale(0.5);
+    color: whitesmoke;
+}
+
+.imageElement--carousel {
+    height: 350px;
+    background-size: cover;
+    border-radius: 15px;
+}
+
+.paginationDotsContainer--carousel {
+    transform: translateY(30px);
+}
+
+.paginationDot--carousel--isActive {
+    background-color: #3fff36;
 }
